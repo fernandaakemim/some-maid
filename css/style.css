@@ -229,6 +229,8 @@ header {
   padding-bottom: 2rem;
   background-color: var(--background-body);
   background-image: url("../img/wrapper-bossa-nova-cleaning-atlanta.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .grid-cols-2 {
