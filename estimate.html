@@ -99,7 +99,7 @@
       <form action="/enviar-formulario" method="post" data-estimate>
         <p class="alert">* Attention! All fields on this form are mandatory.</p>
         <fieldset class="personal-information">
-          <!---------- Personal Information: ---------->
+          <!-- <legend>Personal Information:</legend> -->
           <label class="label-contact" for="name">Name</label>
           <input class="input-contact" type="text" name="name-client" id="name-client" required>
 
@@ -111,7 +111,7 @@
 
             <div>
               <label class="label-contact" for="phone">Phone</label>
-              <input class="input-contact input-personal" type="tel" name="phone-client" id="phone-client"
+              <input class="input-contact input-personal" type="tel" name="phone-client" id="phone-client" placeholder="(999)999-9999"
                 pattern="\([0-9]{3}\)[0-9]{3}-[0-9]{4}" required>
             </div>
 
@@ -120,9 +120,11 @@
         </fieldset>
 
         <fieldset class="address-information personal-information">
+          <p style="color: #334157;">For now, we only serve the city of Atlanta - GA</p>
           <div class="zip-code">
             <label class="label-contact" for="zip-code">Zip Code</label>
-            <input class="input-contact" type="text" name="zip-code" id="zip-code" pattern="[0-9]{5}" required>
+            <input class="input-contact" name="zip-code" id="zipCode" placeholder="99999" pattern="[0-9]{5}" required>
+            <div id="errorZipCode" style="color: #ff0000; font-size: 0.8rem;"></div>
           </div>
 
 
@@ -133,21 +135,33 @@
             </div>
 
             <div>
-              <label class="label-contact" for="apt-suite">Apt / Suite</label>
-              <input class="input-contact input-address" type="text" name="apt-suite" id="apt-suite" required>
+              <label class="label-contact" for="number">Number</label>
+              <input class="input-contact input-address" type="number" name="number" id="number" required>
             </div>
 
           </div>
 
           <div class="collum-personal">
             <div>
+              <label class="label-contact" for="apt">Apt</label>
+              <input class="input-contact input-address" type="number" name="apt" id="apt">
+            </div>
+            <div>
+              <label class="label-contact" for="suite">Suite</label>
+              <input class="input-contact input-address" type="number" name="suite" id="suite">
+            </div>
+          </div>
+
+          <div class="collum-personal">
+            <div>
               <label class="label-contact" for="city">City</label>
-              <input class="input-contact input-address" type="text" name="city-client" id="city-client" required>
+              <input class="input-contact input-address" type="text" name="city-client" id="city" required>
+              <div id="errorCity" style="color: #ff0000; font-size: 0.8rem;"></div>
             </div>
 
             <div>
               <label class="label-contact" for="state">State</label>
-              <input class="input-contact input-address" type="text" name="state-client" id="state-client" required>
+              <input class="input-contact input-address" type="text" name="state-client" id="state" required>
             </div>
 
           </div>
@@ -256,6 +270,7 @@
 
   <!--JS-->
   <script src="./js/script.js" defer></script>
+  <script src="./js/zip-code.js"></script>
 </body>
 
 </html>
